@@ -9,7 +9,7 @@ function vdxPluginCreator(reduxStore, actionTypes) {
   const reduxActions = {};
   const reduxMutations = {};
 
-  Object.keys(actionTypes).forEach((type) => {
+  Object.values(actionTypes).forEach((type) => {
     reduxMutations[type] = (state, action) => { }; // Register Action
 
     reduxActions[type] = ({ dispatch, commit }, action) => {
