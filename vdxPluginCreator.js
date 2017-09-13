@@ -28,7 +28,7 @@ function vdxPluginCreator(reduxStore, actionTypes) {
     const next = store.dispatch;
     store.dispatch = function (...args) {
       if (typeof args[0] === 'function') {
-        args[0](next, store.state, ...args.slice(1));
+        args[0](next, () => store.state.redux, ...args.slice(1));
       } else { 
         next(...args);
       }
